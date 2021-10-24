@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 """ Python Async """
+
 from asyncio import gather
 from time import time
 
@@ -12,4 +14,4 @@ async def measure_runtime():
     task = [async_comprehension() for i in range(4)]
     await gather(*task)
     end = time()
-    return end - start
+    return (end - start)
