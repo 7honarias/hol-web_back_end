@@ -3,7 +3,7 @@
 from typing import Tuple
 import csv
 import math
-from typing import List, Dict
+from typing import List
 
 
 class Server:
@@ -35,7 +35,7 @@ class Server:
             return []
         return result[pageRange[0]: pageRange[1]]
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """ hyper pagination """
         result = {}
         result["page_size"] = page_size
@@ -46,7 +46,7 @@ class Server:
         range = index_range(page, page_size)
         total_page = totalLine/page_size
 
-        if total_page >= totalLine:
+        if total_page < page:
             result["next_page"] = None
         else:
             result["next_page"] = page + 1
