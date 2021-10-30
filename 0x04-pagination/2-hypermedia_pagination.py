@@ -59,6 +59,7 @@ class Server:
         result["total_pages"] = math.ceil(total_page)
         return result
 
+
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
     """ range index function """
     return ((page - 1) * page_size, (page * page_size))
